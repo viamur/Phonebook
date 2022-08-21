@@ -1,5 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getContactsApi, addContactsApi, removeContactsApi } from '../../utils/contactsApi';
+import {
+  getContactsApi,
+  addContactsApi,
+  removeContactsApi,
+  editContactsApi,
+} from '../../utils/contactsApi';
 
 export const getContacts = createAsyncThunk('getContacts', async (_, thunkApi) => {
   const { token } = thunkApi.getState().user;
@@ -24,6 +29,15 @@ export const removeContacts = createAsyncThunk('removeContacts', async (id, thun
   try {
     await removeContactsApi(id);
     return id;
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
+
+export const editContacts = createAsyncThunk('editContacts', async ({ id, ...obj }, thunkApi) => {
+  try {
+    const editContact = await editContactsApi(id, obj);
+    return editContact;
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);
   }

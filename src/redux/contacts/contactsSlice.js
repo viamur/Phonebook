@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getContacts, addContacts, removeContacts } from './contactsOperations';
+import { getContacts, addContacts, removeContacts, editContacts } from './contactsOperations';
 
 const contactsSlice = createSlice({
   name: 'items',
@@ -8,10 +8,14 @@ const contactsSlice = createSlice({
     isLoading: false,
     error: null,
     filter: '',
+    edit: null,
   },
   reducers: {
     changeFilter(state, { payload }) {
       return { ...state, filter: payload };
+    },
+    editContact(state, { payload }) {
+      state.edit = payload;
     },
   },
   extraReducers: {
@@ -51,8 +55,21 @@ const contactsSlice = createSlice({
       state.isLoading = false;
       state.items = state.items.filter(item => item.id !== payload);
     },
+    [editContacts.pending]: (state, { payload }) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [editContacts.rejected]: (state, { payload }) => {
+      state.isLoading = false;
+      state.error = payload;
+    },
+    [editContacts.fulfilled]: (state, { payload }) => {
+      state.items = state.items.map(el => (el.id === payload.id ? payload : el));
+      state.edit = null;
+      state.isLoading = false;
+    },
   },
 });
 
-export const { changeFilter } = contactsSlice.actions;
+export const { changeFilter, editContact } = contactsSlice.actions;
 export default contactsSlice.reducer;

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 import s from './ContactForm.module.css';
-import { addContacts } from 'redux/contacts/contactsOperations';
-import { getStateItems, getStateLoading } from 'redux/contacts/contactsSelector';
+import { addContacts, editContacts } from 'redux/contacts/contactsOperations';
+import { getStateEdit, getStateItems, getStateLoading } from 'redux/contacts/contactsSelector';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -11,7 +11,15 @@ const ContactForm = () => {
 
   const contacts = useSelector(getStateItems);
   const isLoading = useSelector(getStateLoading);
+  const editObj = useSelector(getStateEdit);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (editObj) {
+      setName(editObj.name);
+      setNumber(editObj.number);
+    }
+  }, [editObj]);
 
   const handleChangeInput = e => {
     const input = e.target;
@@ -22,6 +30,12 @@ const ContactForm = () => {
 
   const handleFormCompilation = e => {
     e.preventDefault();
+    if (editObj) {
+      dispatch(editContacts({ ...editObj, name, number }));
+      setName('');
+      setNumber('');
+      return;
+    }
     const check = contacts.find(el => el.name.toLowerCase() === name.toLowerCase());
     if (!check) {
       dispatch(addContacts({ name, number }));
@@ -62,7 +76,7 @@ const ContactForm = () => {
           />
         </label>
         <button className={s.btn} type="submit" disabled={isLoading}>
-          {isLoading ? 'Loading...' : 'Add contact'}
+          {isLoading ? 'Loading...' : editObj ? 'Edit contact' : 'Add contact'}
         </button>
       </form>
     </>
