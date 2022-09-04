@@ -7,6 +7,7 @@ import { contactsAfterFilter } from 'redux/contacts/contactsSelector';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
+import Tooltip from '@mui/material/Tooltip';
 import { editContact } from 'redux/contacts/contactsSlice';
 
 const ContactList = () => {
@@ -29,16 +30,24 @@ const ContactList = () => {
               {el.name}: <span className={s.num}>{el.number}</span>
             </p>
             <div>
-              <IconButton aria-label="edit" type="button" onClick={() => dispatch(editContact(el))}>
-                <EditIcon />
-              </IconButton>
-              <IconButton
-                aria-label="delete"
-                type="button"
-                onClick={() => dispatch(removeContacts(el.id))}
-              >
-                <DeleteIcon />
-              </IconButton>
+              <Tooltip title="Edit">
+                <IconButton
+                  aria-label="edit"
+                  type="button"
+                  onClick={() => dispatch(editContact(el))}
+                >
+                  <EditIcon />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Delete">
+                <IconButton
+                  aria-label="delete"
+                  type="button"
+                  onClick={() => dispatch(removeContacts(el.id))}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Tooltip>
             </div>
           </li>
         ))}
