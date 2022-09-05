@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/phonebook/static/css/main.6b62741d.css",
-    "main.js": "/phonebook/static/js/main.aab76b56.js",
+    "main.js": "/phonebook/static/js/main.72713332.js",
     "ContactsPage.css": "/phonebook/static/css/ContactsPage.3ce2f75a.chunk.css",
     "ContactsPage.js": "/phonebook/static/js/ContactsPage.0f5950f2.chunk.js",
     "LoginPage.css": "/phonebook/static/css/LoginPage.25dfdbe0.chunk.css",
@@ -9,7 +9,7 @@
     "RegisterPage.css": "/phonebook/static/css/RegisterPage.25dfdbe0.chunk.css",
     "RegisterPage.js": "/phonebook/static/js/RegisterPage.5271f5e1.chunk.js",
     "BlockForContacts.css": "/phonebook/static/css/BlockForContacts.78aa4964.chunk.css",
-    "BlockForContacts.js": "/phonebook/static/js/BlockForContacts.35a1f32c.chunk.js",
+    "BlockForContacts.js": "/phonebook/static/js/BlockForContacts.ce79b4c4.chunk.js",
     "static/js/407.9dd130b0.chunk.js": "/phonebook/static/js/407.9dd130b0.chunk.js",
     "static/js/776.f33dc497.chunk.js": "/phonebook/static/js/776.f33dc497.chunk.js",
     "static/js/799.6bf6077a.chunk.js": "/phonebook/static/js/799.6bf6077a.chunk.js",
@@ -18,7 +18,7 @@
     "static/media/1.png": "/phonebook/static/media/1.eecc3e90ff571c791686.png",
     "index.html": "/phonebook/index.html",
     "main.6b62741d.css.map": "/phonebook/static/css/main.6b62741d.css.map",
-    "main.aab76b56.js.map": "/phonebook/static/js/main.aab76b56.js.map",
+    "main.72713332.js.map": "/phonebook/static/js/main.72713332.js.map",
     "ContactsPage.3ce2f75a.chunk.css.map": "/phonebook/static/css/ContactsPage.3ce2f75a.chunk.css.map",
     "ContactsPage.0f5950f2.chunk.js.map": "/phonebook/static/js/ContactsPage.0f5950f2.chunk.js.map",
     "LoginPage.25dfdbe0.chunk.css.map": "/phonebook/static/css/LoginPage.25dfdbe0.chunk.css.map",
@@ -26,7 +26,7 @@
     "RegisterPage.25dfdbe0.chunk.css.map": "/phonebook/static/css/RegisterPage.25dfdbe0.chunk.css.map",
     "RegisterPage.5271f5e1.chunk.js.map": "/phonebook/static/js/RegisterPage.5271f5e1.chunk.js.map",
     "BlockForContacts.78aa4964.chunk.css.map": "/phonebook/static/css/BlockForContacts.78aa4964.chunk.css.map",
-    "BlockForContacts.35a1f32c.chunk.js.map": "/phonebook/static/js/BlockForContacts.35a1f32c.chunk.js.map",
+    "BlockForContacts.ce79b4c4.chunk.js.map": "/phonebook/static/js/BlockForContacts.ce79b4c4.chunk.js.map",
     "407.9dd130b0.chunk.js.map": "/phonebook/static/js/407.9dd130b0.chunk.js.map",
     "776.f33dc497.chunk.js.map": "/phonebook/static/js/776.f33dc497.chunk.js.map",
     "799.6bf6077a.chunk.js.map": "/phonebook/static/js/799.6bf6077a.chunk.js.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.6b62741d.css",
-    "static/js/main.aab76b56.js"
+    "static/js/main.72713332.js"
   ]
 }
