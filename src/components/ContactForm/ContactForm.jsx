@@ -60,6 +60,7 @@ const ContactForm = () => {
             required
             value={name}
             onChange={handleChangeInput}
+            maxLength={12}
           />
         </label>
         <label className={s.label}>
